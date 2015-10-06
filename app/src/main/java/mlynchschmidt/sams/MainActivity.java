@@ -1,11 +1,33 @@
 package mlynchschmidt.sams;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+//Imports for Google Spreads and other API. Running into issues; authn import is not recognized, as well as exceptions later on.
+//import com.google.gdata.client.authn.oauth.*;
+import com.google.gdata.client.spreadsheet.*;
+import com.google.gdata.data.*;
+import com.google.gdata.data.batch.*;
+import com.google.gdata.data.spreadsheet.*;
+import com.google.gdata.util.*;
+
+import java.io.IOException;
+import java.net.*;
+import java.util.*;
+
+
+
+
 public class MainActivity extends AppCompatActivity {
+        //Spreads API format shell from Google walkthrough
+        public static void main(String[] args)
+                throws AuthenticationException, MalformedURLException, IOException, ServiceException {
+
+            // Application code here
+
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
