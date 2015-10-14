@@ -37,7 +37,7 @@ import java.util.*;
 
 
 
-/*public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
         //Spreads API format shell from Google walkthrough
         public static void main(String[] args)
                 throws AuthenticationException, MalformedURLException, IOException, ServiceException {
@@ -103,4 +103,3 @@ import java.util.*;
         return super.onOptionsItemSelected(item);
     }
 }
-*/
