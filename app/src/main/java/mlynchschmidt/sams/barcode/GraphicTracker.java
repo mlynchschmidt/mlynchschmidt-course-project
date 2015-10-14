@@ -59,4 +59,3 @@ public class GraphicTracker extends Tracker<Barcode> {
         }
     }
 
-}

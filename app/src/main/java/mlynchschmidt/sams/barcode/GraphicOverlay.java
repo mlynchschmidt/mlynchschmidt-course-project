@@ -1,8 +1,6 @@
-package mlynchschmidt.sams.barcode;
-//DIRECTLY COPIED; Necessary import in another class, pulled from sample files. Code here is unlikely to be modified from original. (?)
-/**
- * Created by Morgan on 10/12/2015.
- */
+
+
+
 /*
  * Copyright (C) The Android Open Source Project
  *
@@ -18,18 +16,17 @@ package mlynchschmidt.sams.barcode;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package mlynchschmidt.sams.barcode;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.HashSet;
-import java.util.Set;
-
-
 import com.google.android.gms.vision.CameraSource;
 
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A view which renders a series of custom graphics to be overlayed on top of an associated preview
@@ -49,14 +46,15 @@ import com.google.android.gms.vision.CameraSource;
  * from the preview's coordinate system to the view coordinate system.</li>
  * </ol>
  */
-public class GraphicOverlay extends View {
+public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     private final Object mLock = new Object();
     private int mPreviewWidth;
     private float mWidthScaleFactor = 1.0f;
     private int mPreviewHeight;
     private float mHeightScaleFactor = 1.0f;
     private int mFacing = CameraSource.CAMERA_FACING_BACK;
-    private Set<Graphic> mGraphics = new HashSet<>();
+    private Set<T> mGraphics = new HashSet<>();
+    private T mFirstGraphic;
 
     /**
      * Base class for a custom graphics object to be rendered within the graphic overlay.  Subclass
@@ -134,6 +132,7 @@ public class GraphicOverlay extends View {
     public void clear() {
         synchronized (mLock) {
             mGraphics.clear();
+            mFirstGraphic = null;
         }
         postInvalidate();
     }
@@ -141,9 +140,12 @@ public class GraphicOverlay extends View {
     /**
      * Adds a graphic to the overlay.
      */
-    public void add(Graphic graphic) {
+    public void add(T graphic) {
         synchronized (mLock) {
             mGraphics.add(graphic);
+            if (mFirstGraphic == null) {
+                mFirstGraphic = graphic;
+            }
         }
         postInvalidate();
     }
@@ -151,11 +153,25 @@ public class GraphicOverlay extends View {
     /**
      * Removes a graphic from the overlay.
      */
-    public void remove(Graphic graphic) {
+    public void remove(T graphic) {
         synchronized (mLock) {
             mGraphics.remove(graphic);
+            if (mFirstGraphic != null && mFirstGraphic.equals(graphic)) {
+                mFirstGraphic = null;
+            }
         }
         postInvalidate();
+    }
+
+    /**
+     * Returns the first (oldest) graphic added.  This is used
+     * to get the barcode that was detected first.
+     * @return graphic containing the barcode, or null if no barcodes are detected.
+     */
+    public T getFirstGraphic() {
+        synchronized (mLock) {
+            return mFirstGraphic;
+        }
     }
 
     /**

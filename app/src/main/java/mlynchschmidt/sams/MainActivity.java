@@ -37,7 +37,7 @@ import java.util.*;
 
 
 
-public class MainActivity extends AppCompatActivity {
+/*public class MainActivity extends AppCompatActivity {
         //Spreads API format shell from Google walkthrough
         public static void main(String[] args)
                 throws AuthenticationException, MalformedURLException, IOException, ServiceException {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BarcodeDetector detector =
+       /* BarcodeDetector detector =
                 new BarcodeDetector.Builder(getApplicationContext())
                         .setBarcodeFormats(Barcode.DATA_MATRIX | Barcode.QR_CODE)
                         .build();
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Frame frame = new Frame.Builder().setBitmap(myBitmap).build();
-        SparseArray<Barcode> barcodes = detector.detect(frame);
+   //     SparseArray<Barcode> barcodes = detector.detect(frame);
 
         Barcode thisCode = barcodes.valueAt(0);
         txtView.setText(thisCode.rawValue);
@@ -103,3 +103,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/

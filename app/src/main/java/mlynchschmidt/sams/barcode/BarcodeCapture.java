@@ -22,8 +22,10 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Toast;
+import android.support.design.widget.Snackbar;
 
-import com.google.android.gms.vision.CameraSource;
+//import com.google.android.gms.vision.CameraSource;
+import mlynchschmidt.sams.barcode.CameraSource;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
