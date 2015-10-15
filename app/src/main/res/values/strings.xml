@@ -15,5 +15,7 @@
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
 
+    <string name="date_picker_title">Date of crime:</string>
+
 
 </resources>

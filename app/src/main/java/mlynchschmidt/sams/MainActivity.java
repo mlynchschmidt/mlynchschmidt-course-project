@@ -1,3 +1,5 @@
+/*
+
 package mlynchschmidt.sams;
 //Studio Asset Management System
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView txtView = (TextView) findViewById(R.id.txtContent);
+        TextView txtView = (TextView) findViewById(R.id.);
 
 
 
@@ -103,3 +105,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/

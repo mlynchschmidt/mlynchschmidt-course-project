@@ -23,6 +23,7 @@ import android.widget.TextView;
     import com.google.android.gms.vision.barcode.Barcode;
 
 import mlynchschmidt.sams.R;
+import mlynchschmidt.sams.database.AddAsset;
 
 /**
      * Main activity demonstrating how to pass extra parameters to an activity that
@@ -51,6 +52,7 @@ import mlynchschmidt.sams.R;
             useFlash = (CompoundButton) findViewById(R.id.use_flash);
 
             findViewById(R.id.read_barcode).setOnClickListener(this);
+            //findViewById(R.id.date_button).setOnClickListener(this); Sorry. Not today.
         }
 
         /**
@@ -67,6 +69,11 @@ import mlynchschmidt.sams.R;
                 intent.putExtra(BarcodeCapture.UseFlash, useFlash.isChecked());
 
                 startActivityForResult(intent, RC_BARCODE_CAPTURE);
+            }
+            if(v.getId() == R.id.date_button) {
+                //jump to rough Asset add UI
+                Intent intent = new Intent(this, AddAsset.class);
+                startActivity(intent);
             }
 
         }
