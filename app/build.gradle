@@ -25,11 +25,22 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:multidex:1.0.0'
-    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+
+
+    compile 'com.google.android.gms:play-services-identity:8.3.0'
+
     //Adding dependencies for GooglePlay APIs (barcode, spreads, drive)
-    compile 'com.google.android.gms:play-services:8.1.0'
+    compile 'com.google.android.gms:play-services:8.3.0'
     //compile 'com.google.android.gms:play-services:7.8+'
-    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:design:23.1.0'
+    //Added for google apps scripts API
+    compile('com.google.api-client:google-api-client-android:1.20.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-script:v1-rev1-1.20.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
 
 
 }

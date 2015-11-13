@@ -1,5 +1,8 @@
 package mlynchschmidt.sams;
 
+//GooglePlayServicesUtil.getOpenSourceSoftwareLicenseInfo required call for legal info
+//API  KEY AIzaSyAgImkqY-hd91fihaReB7NT1fjJW1OsRq0
+//CLIENT ID 101800828534-ea53te5kmdrl5vm4eab4ns6du82989qr.apps.googleusercontent.com
 /**
  * Created by Morgan on 10/14/2015.
  */
