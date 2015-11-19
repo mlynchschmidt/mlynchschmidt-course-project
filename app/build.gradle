@@ -24,7 +24,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:multidex:1.0.0'
+    compile ('com.android.support:multidex:1.0.0') {
+//        exclude group: 'com.google.api-client:google-api-client-android:1.20.0'
+//        exclude group: 'com.google.apis:google-api-services-script:v1-rev1-1.20.0'
+    }
     compile 'com.android.support:appcompat-v7:23.1.0'
 
 
@@ -34,13 +37,34 @@ dependencies {
     compile 'com.google.android.gms:play-services:8.3.0'
     //compile 'com.google.android.gms:play-services:7.8+'
     compile 'com.android.support:design:23.1.0'
+
+
     //Added for google apps scripts API
     compile('com.google.api-client:google-api-client-android:1.20.0') {
         exclude group: 'org.apache.httpcomponents'
+//        exclude group: 'com.google.common'
+//        exclude group: 'com.google.guava', module: 'guava'
+       exclude module:'guava-jdk5'
+//       exclude module:'guava-11.0.2'
+        exclude module: 'jsr305'
+//        exclude module: 'jsr305-1.3.9'
+
     }
     compile('com.google.apis:google-api-services-script:v1-rev1-1.20.0') {
-        exclude group: 'org.apache.httpcomponents'
+       exclude group: 'org.apache.httpcomponents'
+       // exclude group: 'com.google.guava', module: 'guava'
+       exclude module:'guava-jdk5'
+        //exclude module:'guava-11.0.2'
+        //exclude module:'guava'
+        exclude module: 'jsr305'
+        //exclude module: 'jsr305-1.3.9'
+        //exclude module: 'com.google.common.eventbus.allowconcurrentevents'
     }
-
+//
+//   configurations {
+//      all*.exclude module: 'guava-jdk5'
+//        all*.exclude module: 'jsr305'
+//
+//    }
 
 }
